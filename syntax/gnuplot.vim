@@ -15,11 +15,6 @@
 " credit also to Jim Eberle <jim.eberle@fastnlight.com>
 " for the script http://www.vim.org/scripts/script.php?script_id=1737
 
-" quit when a syntax file was already loaded
-if exists('b:current_syntax')
-  finish
-endif
-
 " ---- Special characters ---- "
 
 " no harm in just matching any \[char] within double quotes, right?
