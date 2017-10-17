@@ -5,3 +5,5 @@ setlocal shiftwidth=4
 
 setlocal commentstring=#\ %s
 setlocal completefunc=syntaxcomplete#Complete
+
+compiler gnuplot
