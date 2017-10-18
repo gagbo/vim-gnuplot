@@ -7,9 +7,16 @@ function! GnuplotIndent()
     let l:previousNum = prevnonblank(v:lnum -1)
     let l:previous = getline(l:previousNum)
 
+    " If the line continues....
     if l:previous =~# '\\\s*$'
-        return indent(l:previousNum) + &tabstop
+        if indent(l:previousNum) == 0
+            " ...raise indentation if the previous line was not
+            return indent(l:previousNum) + &tabstop
+        elseif indent(l:previousNum) != 0
+            " ...leave indentation if the previous line was already indented
+            return indent(l:previousNum)
+        endif
     endif
 
-    return indent(l:previousNum)
+    return indent(l:previousNum) - &tabstop
 endfunction
