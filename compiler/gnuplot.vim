@@ -19,6 +19,7 @@ CompilerSet makeprg=gnuplot\ %:S
 CompilerSet errorformat=
       \%E%p^,
       \%Z\"%f\"\\,\ line\ %l:\ %m,
+      \\"%f\"\ line\ %l:\ %m,
       \%-G%.%#
 
 let &cpo = s:cpo_save
