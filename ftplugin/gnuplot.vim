@@ -10,9 +10,9 @@ compiler gnuplot
 
 if executable('gnuplot')
   if !has('gui_running') && executable('less')
-    command! -buffer -nargs=1 RunHelp silent exe '!gnuplot -e "help <args>" 2>/dev/null | less' | redraw!
+    command! -buffer -nargs=1 RunHelp silent exe '!gnuplot -e "help <args>" 2>/dev/null' | redraw!
   elseif has('terminal')
-    command! -buffer -nargs=1 RunHelp silent exe ':term gnuplot -e "help <args>"' . (executable('less') ? ' | less' : '')
+    command! -buffer -nargs=1 RunHelp silent exe ':term gnuplot -e "help <args>"'
   else
     command! -buffer -nargs=1 RunHelp echo system('gnuplot -e "help <args>" 2>/dev/null')
   endif
