@@ -14,7 +14,7 @@ endif
 let s:cpo_save = &cpo
 set cpo-=C
 
-CompilerSet makeprg=gnuplot\ %
+CompilerSet makeprg=gnuplot\ %:S
 
 CompilerSet errorformat=
       \%E%p^,
