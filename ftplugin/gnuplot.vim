@@ -9,7 +9,7 @@ setlocal completefunc=syntaxcomplete#Complete
 compiler gnuplot
 
 if executable('gnuplot')
-  if !has('gui_running') && executable('less')
+  if !has('gui_running')
     command! -buffer -nargs=1 RunHelp silent exe '!gnuplot -e "help <args>" 2>/dev/null' | redraw!
   elseif has('terminal')
     command! -buffer -nargs=1 RunHelp silent exe ':term gnuplot -e "help <args>"'
